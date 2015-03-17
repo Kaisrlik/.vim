@@ -30,13 +30,26 @@ return 0;
 endsnippet
 
 snippet Once "Simple includeude header guard"
-#ifndef  ${1:`!v toupper(Filename('', 'UNTITLED').'_H')`}
+#ifndef  ${1:`!p snip.rv = '__' + (snip.basename) + '_H__'`}
 #define  $1
 
 ${0:/* code */}
 
 #endif   /* ----- #ifndef $1  ----- */
 endsnippet
+
+
+
+
+snippet once
+#ifndef ${1:`toupper(Filename('', 'UNTITLED').'_H__')`}
+#define $1
+
+${2}
+
+#endif /* end of include guard: $1 */
+endsnippet
+
 
 snippet if "if .. (if)" !
 if (${1:/* condition */}) {

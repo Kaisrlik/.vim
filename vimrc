@@ -1,3 +1,5 @@
+" Thx Miroslav Bendík for inspirating of vimrc file
+
 set runtimepath+=$HOME/.vim/bundle/ultisnips
 runtime autoload/pathogen.vim
 call pathogen#infect('bundle/{}')
@@ -12,6 +14,9 @@ map <C-up> gk
 " Nastavenie nekompatibilného režimu
 set nocompatible
 
+set ruler
+set selection=exclusive
+
 " Hľadanie nastavení v lokálnych súboroch
 set exrc
 
@@ -25,11 +30,11 @@ filetype plugin on
 " Podpora automatického načítavania odsadzovacieho skriptu
 filetype indent on
 
-" Nastavenie histórie na 1000 príkazov
+" Nastaveni historie na 1000 príkazu
 set history=1000
-" Zapneme zobrazovanie čísel riadkov
+" Zapne zobrazovani cisel radku
 set number
-" Zapneme zabaľovanie znakov
+" Zapne zabaľovanie znakov
 set conceallevel=2
 " Automatický presun na hľadaný výraz počas písania
 set incsearch
@@ -40,9 +45,9 @@ set hidden
 " Vypnutie pípnutí pri chybe
 set noerrorbells
 set novisualbell
-set t_vb=
+set vb t_vb=
 
-" Nastavenie príkazu pre grepovanie súborov
+" Nastaveni príkazu pro grepovani souboru
 set grepprg=grep\ -nH\ $*
 
 " Nastavenie počtu riadkov viditeľných nad a pod riadkom s kurzorom
@@ -62,8 +67,8 @@ set wildchar=<Tab>
 " Doplnenie čo najväčšej časti príkazu
 set wildmode=longest:full,full
 
-" Ignorovanie dopĺňania Ui_*
-set wildignore=Ui_*
+" Ignorovani dopĺnovani *
+set wildignore=Ui_*,*~,*.bak,*.log,*.o
 
 
 " Nastavenie automatického formátovania pri písaní
@@ -113,6 +118,13 @@ set linebreak
  " set Visible invisible characters
  set list
 
+" Taby a mezery TODO doenst work
+syn match Tab "\t"
+syn match Tab2 "\t\t"
+hi def Tab  ctermbg=lightgreen guibg=#e0ffe0
+hi def Tab2 ctermbg=lightred guibg=#ffe0e0
+
+
 " mark line
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
@@ -120,16 +132,57 @@ au WinEnter * set cursorline cursorcolumn
 set cursorline
 
 
+" Vim a Java
+augroup __java__
+   au!
+   au BufReadPre,BufNewFile *.java set fileencodings=utf-8 fileencoding=utf-8 encoding=utf-8
+   au BufRead,BufNewFile *.java set tw=0 foldmethod=indent cindent
+   au BufRead,BufNewFile *.java set tabstop=4 expandtab
+   au BufRead,BufNewFile *.java set foldmethod=syntax foldclose=all foldnestmax=1
+   au BufRead,BufNewFile *.java set guioptions=
+   au BufRead,BufNewFile *.java syn region myFold start="{" end="}" transparent fold
+   au BufRead,BufNewFile *.java noremap <Tab> >>
+   au BufRead,BufNewFile *.java so ~/javabrowser.vim
+   au BufRead,BufNewFile *.java noremap ,c O/**<CR>*<CR>*/<Esc>
+   au BufRead,BufNewFile *.java inoremap ,p * @param<Space>
+augroup END
+
+" Vim a assembler
+augroup __asm__
+   au!
+   au BufRead,BufNewFile *.S set tw=0 nowrap
+"   au BufRead,BufNewFile *.asm noremap <C-F9> :!nasm -f bin % -o output.com -l output.lst<CR>
+"   au BufRead,BufNewFile *.asm noremap <F9> :!start output.com<CR>
+augroup END
+
+
+" Editace binárních souborů
+augroup __raw__
+    au!
+    au BufReadPre   *.raw let &bin=1
+    au BufReadPost  *.raw if &bin | %!xxd -g1
+    au BufReadPost  *.raw set ft=xxd | endif
+    au BufWritePre  *.raw if &bin | %!xxd -g1 -r
+    au BufWritePre  *.raw endif
+    au BufWritePost *.raw if &bin | %!xxd -g1
+    au BufWritePost *.raw set nomod | endif
+augroup END
+
 let g:clang_use_library=1
 let g:clang_complete_macros=1
 let g:clang_library_path="/usr/lib/"
 let g:clang_snippets=1
 let g:clang_snippets_engine='ultisnips'
 let g:clang_conceal_snippets=1
+"Start periodic quickfix
 let g:clang_periodic_quickfix=1
+"Hihhlight errors and warnings
 let g:clang_hl_errors=1
 let g:clang_complete_auto = 1
-let g:clang_complete_copen = 1
+"Create popup window with errors
+"let g:clang_complete_copen =1
+"automaticlly close poppup window with errors"
+"let g:clang_close_preview = 1;
 
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
@@ -139,17 +192,20 @@ let g:snips_company = "FEL CVUT"
 
 let g:SuperTabDefaultCompletionType = "context"
 
+
 imap <C-Space> <C-X><C-I>
 imap <Nul> <C-X><C-I>
 
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
  let g:UltiSnipsEditSplit="vertical"
+
+
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 
