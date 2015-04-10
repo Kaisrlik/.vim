@@ -89,7 +89,7 @@ set preserveindent
 " Zaokrúhlenie odsadenia na niekoľko tabov
 set shiftround
 
-set expandtab
+set noexpandtab
 " Nastavenie zobrazovanej šírky tabulátora
 set tabstop=3
 " Počet vložených medzier pri zväčšení odsadenia (automaticky sa prevedú na tabulátor)
@@ -124,11 +124,7 @@ syn match Tab2 "\t\t"
 hi def Tab  ctermbg=lightgreen guibg=#e0ffe0
 hi def Tab2 ctermbg=lightred guibg=#ffe0e0
 
-
-" mark line
-au WinLeave * set nocursorline
-au WinEnter * set cursorline
-au WinEnter * set cursorline cursorcolumn
+" zviditelneni cursor line
 set cursorline
 
 
@@ -166,6 +162,13 @@ augroup __raw__
     au BufWritePre  *.raw endif
     au BufWritePost *.raw if &bin | %!xxd -g1
     au BufWritePost *.raw set nomod | endif
+    au BufReadPre   *.bin let &bin=1
+    au BufReadPost  *.bin if &bin | %!xxd -g1
+    au BufReadPost  *.bin set ft=xxd | endif
+    au BufWritePre  *.bin if &bin | %!xxd -g1 -r
+    au BufWritePre  *.bin endif
+    au BufWritePost *.bin if &bin | %!xxd -g1
+    au BufWritePost *.bin set nomod | endif
 augroup END
 
 let g:clang_use_library=1
