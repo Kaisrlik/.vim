@@ -16,3 +16,12 @@
 [submodule "bundle/vim-sensible"]
    path = bundle/vim-sensible
    url = git://github.com/tpope/vim-sensible.git
+[submodule "bundle/vim-airline"]
+   path = bundle/vim-airline
+   url = git://github.com/bling/vim-airline.git
+[submodule "bundle/vim-fugitive"]
+   path = bundle/vim-fugitive
+   url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-powerline"]
+   path = bundle/vim-powerline
+   url = git://github.com/Lokaltog/vim-powerline.git

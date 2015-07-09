@@ -212,6 +212,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cscope
 " Jason Duell       jduell@alumni.princeton.edu     9/12/2001
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
@@ -282,3 +284,12 @@ if has("cscope")
 
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline
+let g:airline_theme="kajza"
+let g:airline_powerline_fonts = 1
+" if symbols are mess up
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
