@@ -171,33 +171,22 @@ augroup __raw__
     au BufWritePost *.bin set nomod | endif
 augroup END
 
-let g:clang_use_library=1
-let g:clang_complete_macros=1
-let g:clang_library_path="/usr/lib/"
-let g:clang_snippets=1
-let g:clang_snippets_engine='ultisnips'
-let g:clang_conceal_snippets=1
-"Start periodic quickfix
-let g:clang_periodic_quickfix=1
-"Hihhlight errors and warnings
-let g:clang_hl_errors=1
-let g:clang_complete_auto = 1
-"Create popup window with errors
-"let g:clang_complete_copen =1
-"automaticlly close poppup window with errors"
-"let g:clang_close_preview = 1;
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YCM
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_error_symbol = '>>'
+let g:ycm_show_diagnostics_ui = 1
+
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"Disable scratch window
+set completeopt=menu,menuone
+
 
 let g:snips_author = "Jan Kaisrlik"
 let g:snips_company = "FEL CVUT"
 
-let g:SuperTabDefaultCompletionType = "context"
-
-
-imap <C-Space> <C-X><C-I>
-imap <Nul> <C-X><C-I>
 
 
 " Trigger configuration.
