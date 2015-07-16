@@ -11,6 +11,21 @@ noremap <F1> ""
 map <C-down> gj
 map <C-up> gk
 
+
+" uložení aktuálně editovaného souboru
+map <F2> :w<cr>
+" skok na předchozí chybové hlášení
+map <F3> :cp<cr>
+" skok na následující chybové hlášení
+map <F4> :cn<cr>
+" uložení aktuálně editovaného souboru a spuštění překladu
+map <F9> :w<cr>:make<cr>
+" výpis všech chybových hlášení překladače
+map <F10> :cl<cr><cr>
+" Nerdtree
+map <F12> :NERDTree<CR>
+map <F11> :Explore<CR>
+
 " Nastavenie nekompatibilného režimu
 set nocompatible
 
@@ -103,7 +118,7 @@ set title
 set showmatch
 " Zvýrazňovať vyhľadávanie
 set hlsearch
-colorscheme default
+"colorscheme default
 
 " Aktivovanie podpory myši vo všetkých režimoch
 set mouse=a
@@ -118,11 +133,28 @@ set linebreak
  " set Visible invisible characters
  set list
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntax
+if exists("b:current_syntax")
+        finish
+endif
+syn case ignore
 " Taby a mezery TODO doenst work
-syn match Tab "\t"
+highlight Tab1 ctermbg=lightgreen guibg=#e0ffe0
+highlight Tab2 ctermbg=lightred   guibg=#ffe0e0
+highlight Tab3 ctermbg=lightblue  guibg=#e0e0ff
+highlight Tab4 ctermbg=lightcyan  guibg=#ffffe0
+
+syn match Tab1 '\t'
 syn match Tab2 "\t\t"
-hi def Tab  ctermbg=lightgreen guibg=#e0ffe0
-hi def Tab2 ctermbg=lightred guibg=#ffe0e0
+syn match Tab3 "\t\t\t"
+syn match Tab4 "\t\t\t\t"
+" Show trailing whitepace and spaces before a tab:
+syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+" po nasapni <01>44= oznacuje
+syn match fixPrice         "<01>44=[^<01>]*"
+hi def link fixPrice         Label
+let b:current_syntax = "fix"
 
 " zviditelneni cursor line
 set cursorline
@@ -170,6 +202,39 @@ augroup __raw__
     au BufWritePost *.bin if &bin | %!xxd -g1
     au BufWritePost *.bin set nomod | endif
 augroup END
+
+
+
+augroup __latex__
+	au!
+	autocmd BufRead,BufNewFile *.tex inoremap ,ch \chapter{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,sa \section{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,sb \subsection{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,sc \subsubsection{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,ee \emph{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,tt \texttt{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,bb \textbf{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,uv \uv{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,vv \verb$$<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,hh \helpref{}{}<Left><Left><Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,cen \begin{center}<CR><CR>\end{center}<Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,quo \begin{quote}<CR><CR>\end{quote}<Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,tab \begin{tabular}{ll}<CR><CR>\end{tabular}<Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,tbl \begin{table}[htp]<CR><CR>\caption{}<CR>\label{}<CR>\end{table}<C-O>3k
+	autocmd BufRead,BufNewFile *.tex inoremap ,ver \begin{verbatim}<CR><CR>\end{verbatim}<Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,qv \begin{quote}\begin{verbatim}<CR><CR>\end{verbatim}\end{quote}<Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,fig \begin{figure}[htp]<CR><CR>\caption{}<CR>\label{}<CR>\end{figure}<C-O>3k
+	autocmd BufRead,BufNewFile *.tex inoremap ,it \begin{itemize}<CR>\item <CR>\end{itemize}<CR><Up><Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,en \begin{enumerate}<CR>\item <CR>\end{enumerate}<CR><Up><Up>
+	autocmd BufRead,BufNewFile *.tex inoremap ,ii \item<Space>
+	autocmd BufRead,BufNewFile *.tex inoremap ,in \index{!}<Left><Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,ff \footnote{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,re \ref{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,ll \label{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,ci \cite{}<Left>
+	autocmd BufRead,BufNewFile *.tex inoremap ,eq \begin{equation}<CR><CR>\end{equation}<CR><up><up>
+augroup END
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM
