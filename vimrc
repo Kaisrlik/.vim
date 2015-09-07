@@ -360,3 +360,4 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.space = "\ua0"
+let g:clang_library_path = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/'
