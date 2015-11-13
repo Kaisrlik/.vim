@@ -11,6 +11,9 @@ noremap <F1> ""
 map <C-down> gj
 map <C-up> gk
 
+" Space to toggle folds
+nnoremap <Space> za
+vnoremap <Space> za
 
 " uložení aktuálně editovaného souboru
 map <F2> :w<cr>
@@ -70,9 +73,9 @@ set scrolloff=3
 " Nastavenie počtu stĺpcov viditeľných pred a za kurzorom
 set sidescroll=5
 " Nastavenie šírky riadku na 80 znakov
-set textwidth=160
+set textwidth=80
 " Nastavenie zvýraznenia dlhých riadkov
-set colorcolumn=160
+set colorcolumn=80
 
 " Zobrazenie jednoduchého menu pri dopĺňaní s niekoľkými existujúcimi možnosťami
 set wildmenu
@@ -134,6 +137,18 @@ set linebreak
  set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fold default
+
+" exten left-side by 3 char used for folding.
+"set foldcolumn=3
+
+let g:markdown_fold_style='nested'
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntax
 if exists("b:current_syntax")
         finish
@@ -158,7 +173,6 @@ let b:current_syntax = "fix"
 
 " zviditelneni cursor line
 set cursorline
-
 
 " Vim a Java
 augroup __java__
@@ -187,23 +201,17 @@ augroup END
 " Editace binárních souborů
 augroup __raw__
     au!
-    au BufReadPre   *.raw let &bin=1
-    au BufReadPost  *.raw if &bin | %!xxd -g1
-    au BufReadPost  *.raw set ft=xxd | endif
-    au BufWritePre  *.raw if &bin | %!xxd -g1 -r
-    au BufWritePre  *.raw endif
-    au BufWritePost *.raw if &bin | %!xxd -g1
-    au BufWritePost *.raw set nomod | endif
-    au BufReadPre   *.bin let &bin=1
-    au BufReadPost  *.bin if &bin | %!xxd -g1
-    au BufReadPost  *.bin set ft=xxd | endif
-    au BufWritePre  *.bin if &bin | %!xxd -g1 -r
-    au BufWritePre  *.bin endif
-    au BufWritePost *.bin if &bin | %!xxd -g1
-    au BufWritePost *.bin set nomod | endif
+    au BufReadPost  *.raw %!xxd -g1
+    au BufReadPost  *.raw set ft=xxd
+    au BufWritePre  *.raw %!xxd -g1 -r
+    au BufWritePost *.raw %!xxd -g1
+    au BufWritePost *.raw set nomod
+    au BufReadPost  *.bin %!xxd -g1
+    au BufReadPost  *.bin set ft=xxd
+    au BufWritePre  *.bin %!xxd -g1 -r
+    au BufWritePost *.bin %!xxd -g1
+    au BufWritePost *.bin set nomod
 augroup END
-
-
 
 augroup __latex__
 	au!
@@ -235,6 +243,8 @@ augroup __latex__
 	autocmd BufRead,BufNewFile *.tex inoremap ,eq \begin{equation}<CR><CR>\end{equation}<CR><up><up>
 augroup END
 
+" function graph fold
+au BufRead,BufNewFile *.trace set filetype=trace
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM
@@ -247,7 +257,6 @@ let g:ycm_show_diagnostics_ui = 1
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "Disable scratch window
 set completeopt=menu,menuone
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
@@ -364,4 +373,4 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.space = "\ua0"
-let g:clang_library_path = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/'
+let g:clang_library_path = '/home/kajza/.vim/bundle/YouCompleteMe/third_party/ycmd/'
