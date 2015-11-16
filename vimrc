@@ -11,9 +11,37 @@ noremap <F1> ""
 map <C-down> gj
 map <C-up> gk
 
+" Buffer focus
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " Space to toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
+
+" for linux and windows users (using the control key)
+map <C-S-]> gt
+map <C-S-[> gT
+map <C-1> 1gt
+map <C-2> 2gt
+map <C-3> 3gt
+map <C-4> 4gt
+map <C-5> 5gt
+map <C-6> 6gt
+map <C-7> 7gt
+map <C-8> 8gt
+map <C-9> 9gt
+map <C-0> :tablast<CR>
+
+" Commenting block of code
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Toggle spell checking on and off with `,s`
+let mapleader = ","
+nmap <silent> <leader>s :set spell!<CR>
 
 " uložení aktuálně editovaného souboru
 map <F2> :w<cr>
@@ -22,12 +50,12 @@ map <F3> :cp<cr>
 " skok na následující chybové hlášení
 map <F4> :cn<cr>
 " uložení aktuálně editovaného souboru a spuštění překladu
-map <F9> :w<cr>:make<cr>
+map <F5> :w<cr>:make<cr>
 " výpis všech chybových hlášení překladače
-map <F10> :cl<cr><cr>
+map <F6> :cl<cr><cr>
 " Nerdtree
-map <F12> :NERDTree<CR>
-map <F11> :Explore<CR>
+map <F7> :NERDTree<CR>
+map <F8> :Explore<CR>
 
 " Nastavenie nekompatibilného režimu
 set nocompatible
@@ -90,6 +118,7 @@ set wildignore=Ui_*,*~,*.bak,*.log,*.o
 
 
 " Nastavenie automatického formátovania pri písaní
+" gw
 set formatoptions=croq1
 "                 |||||
 "                 ||||+ Zákaz zalamovania jednoznakových slov
@@ -97,6 +126,9 @@ set formatoptions=croq1
 "                 ||+ Automatické vloženie komentára pri použití o/O
 "                 |+ Automatické vloženie komentára na nový riadok
 "                 + Automatické zalamovanie v komentároch
+
+" gq -> use par
+set formatprg=par\ -w80rjq
 
 " Kopírovanie štruktúry odsadenia pri automatickom odsadení
 set copyindent
@@ -131,10 +163,17 @@ set mousehide
 set mousemodel=popup
 
 set wrapmargin=0
+" zalamovani radku, cela slova
 set linebreak
+" zalamovani radku
+set wrap 
+
 
  " set Visible invisible characters
- set list
+set list
+set listchars=tab:▶\ 
+"set listchars=tab:▶\ ,eol:¬
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fold default
@@ -159,6 +198,10 @@ highlight Tab1 ctermbg=lightgreen guibg=#e0ffe0
 highlight Tab2 ctermbg=lightred   guibg=#ffe0e0
 highlight Tab3 ctermbg=lightblue  guibg=#e0e0ff
 highlight Tab4 ctermbg=lightcyan  guibg=#ffffe0
+
+	" Invisible chars
+	highlight NonText guibg=#4a4a59
+	highlight SpecialKey guibg=#4a4a59
 
 syn match Tab1 '\t'
 syn match Tab2 "\t\t"
@@ -201,16 +244,11 @@ augroup END
 " Editace binárních souborů
 augroup __raw__
     au!
-    au BufReadPost  *.raw %!xxd -g1
-    au BufReadPost  *.raw set ft=xxd
-    au BufWritePre  *.raw %!xxd -g1 -r
-    au BufWritePost *.raw %!xxd -g1
-    au BufWritePost *.raw set nomod
-    au BufReadPost  *.bin %!xxd -g1
-    au BufReadPost  *.bin set ft=xxd
-    au BufWritePre  *.bin %!xxd -g1 -r
-    au BufWritePost *.bin %!xxd -g1
-    au BufWritePost *.bin set nomod
+    au BufReadPost  *.raw,*.bin %!xxd -g1
+    au BufReadPost  *.raw,*.bin set ft=xxd
+    au BufWritePre  *.raw,*.bin %!xxd -g1 -r
+    au BufWritePost *.raw,*.bin %!xxd -g1
+    au BufWritePost *.raw,*.bin set nomod
 augroup END
 
 augroup __latex__
@@ -241,10 +279,23 @@ augroup __latex__
 	autocmd BufRead,BufNewFile *.tex inoremap ,ll \label{}<Left>
 	autocmd BufRead,BufNewFile *.tex inoremap ,ci \cite{}<Left>
 	autocmd BufRead,BufNewFile *.tex inoremap ,eq \begin{equation}<CR><CR>\end{equation}<CR><up><up>
+	" set spell z= -> dictonary
+	" zg correct world, zuw, zug remove
+	autocmd BufRead,BufNewFile *.tex set spell
+"	autocmd BufRead,BufNewFile *.tex set spelllang=en
 augroup END
 
 " function graph fold
 au BufRead,BufNewFile *.trace set filetype=trace
+
+
+" Commenting blocks of code.
+autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex, matlab      let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM
