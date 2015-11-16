@@ -20,10 +20,6 @@ endif
 " Don't load another plugin for this buffer
 let b:did_ftplugin = 1
 
-
-" Create specific filetype
-au BufRead,BufNewFile *.trace		setfiletype trace
-
 function! FunctionGraphFoldExpr(lnum)
   let line = getline(a:lnum)
   if line[-1:] == '{'
