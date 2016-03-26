@@ -171,7 +171,7 @@ set wrap
 
  " set Visible invisible characters
 set list
-set listchars=tab:▶\ 
+"set listchars=tab:>
 "set listchars=tab:▶\ ,eol:¬
 
 
@@ -407,21 +407,23 @@ endif
 let g:airline_theme="kajza"
 "" if symbols are mess up
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+"  let g:airline_symbols = {}
 endif
 
 " unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.space = "\ua0"
-let g:clang_library_path = '/home/kajza/.vim/bundle/YouCompleteMe/third_party/ycmd/'
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_symbols.space = "\ua0"
+let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols = 'fancy'
+let g:clang_library_path = '/home/xeri/.vim/bundle/YouCompleteMe/third_party/ycmd/'
