@@ -40,8 +40,8 @@ noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<C
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " Toggle spell checking on and off with `,s`
-let mapleader = ","
-nmap <silent> <leader>s :set spell!<CR>
+" z=, 1z= take first
+nmap <silent> ,s :set spell!<CR>
 
 " uložení aktuálně editovaného souboru
 map <F2> :w<cr>
@@ -101,9 +101,9 @@ set scrolloff=3
 " Nastavenie počtu stĺpcov viditeľných pred a za kurzorom
 set sidescroll=5
 " Nastavenie šírky riadku na 80 znakov
-set textwidth=80
+set textwidth=160
 " Nastavenie zvýraznenia dlhých riadkov
-set colorcolumn=80
+set colorcolumn=160
 
 " Zobrazenie jednoduchého menu pri dopĺňaní s niekoľkými existujúcimi možnosťami
 set wildmenu
@@ -166,7 +166,7 @@ set wrapmargin=0
 " zalamovani radku, cela slova
 set linebreak
 " zalamovani radku
-set wrap 
+"set wrap 
 
 
  " set Visible invisible characters
@@ -202,6 +202,7 @@ highlight Tab4 ctermbg=lightcyan  guibg=#ffffe0
 	" Invisible chars
 	highlight NonText guibg=#4a4a59
 	highlight SpecialKey guibg=#4a4a59
+	highlight Comment ctermbg=DarkGrey  guibg=#4a4a59
 
 syn match Tab1 '\t'
 syn match Tab2 "\t\t"
@@ -293,7 +294,7 @@ au BufRead,BufNewFile *.trace set filetype=trace
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
 autocmd FileType sh,ruby,python   let b:comment_leader = '# '
 autocmd FileType conf,fstab       let b:comment_leader = '# '
-autocmd FileType tex, matlab      let b:comment_leader = '% '
+autocmd FileType tex,matlab       let b:comment_leader = '% '
 autocmd FileType mail             let b:comment_leader = '> '
 autocmd FileType vim              let b:comment_leader = '" '
 

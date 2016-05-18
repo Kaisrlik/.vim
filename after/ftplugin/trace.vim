@@ -51,7 +51,7 @@ setlocal foldcolumn=12
 setlocal foldmethod=expr
 
 " Set 'comments' to format dashed lists in comments
-" setlocal comments=s:#\ ,m:#\ ,e:#
+setlocal comments=s:#\ ,m:#\ ,e:#
 
 " Set 'commentstring' to put the marker after a #.
 setlocal commentstring=#\ %s
