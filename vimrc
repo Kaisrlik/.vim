@@ -41,6 +41,8 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 
 " Toggle spell checking on and off with `,s`
 " z=, 1z= take first
+" set spell z= -> dictonary
+" zg correct world, zuw, zug remove
 nmap <silent> ,s :set spell!<CR>
 
 " uložení aktuálně editovaného souboru
@@ -101,7 +103,7 @@ set scrolloff=3
 " Nastavenie počtu stĺpcov viditeľných pred a za kurzorom
 set sidescroll=5
 " Nastavenie šírky riadku na 80 znakov
-set textwidth=160
+set textwidth=80
 " Nastavenie zvýraznenia dlhých riadkov
 set colorcolumn=160
 
@@ -118,7 +120,7 @@ set wildignore=Ui_*,*~,*.bak,*.log,*.o
 
 
 " Nastavenie automatického formátovania pri písaní
-" gw
+" gw -> use onotther format
 set formatoptions=croq1
 "                 |||||
 "                 ||||+ Zákaz zalamovania jednoznakových slov
@@ -204,6 +206,9 @@ highlight Tab4 ctermbg=lightcyan  guibg=#ffffe0
 	highlight SpecialKey guibg=#4a4a59
 	highlight Comment ctermbg=DarkGrey  guibg=#4a4a59
 
+" Change color of the Search
+highlight Search ctermbg=DarkYellow  guibg=#4a4a59
+
 syn match Tab1 '\t'
 syn match Tab2 "\t\t"
 syn match Tab3 "\t\t\t"
@@ -280,8 +285,6 @@ augroup __latex__
 	autocmd BufRead,BufNewFile *.tex inoremap ,ll \label{}<Left>
 	autocmd BufRead,BufNewFile *.tex inoremap ,ci \cite{}<Left>
 	autocmd BufRead,BufNewFile *.tex inoremap ,eq \begin{equation}<CR><CR>\end{equation}<CR><up><up>
-	" set spell z= -> dictonary
-	" zg correct world, zuw, zug remove
 	autocmd BufRead,BufNewFile *.tex set spell
 "	autocmd BufRead,BufNewFile *.tex set spelllang=en
 augroup END
@@ -291,12 +294,12 @@ au BufRead,BufNewFile *.trace set filetype=trace
 
 
 " Commenting blocks of code.
-autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-autocmd FileType conf,fstab       let b:comment_leader = '# '
-autocmd FileType tex,matlab       let b:comment_leader = '% '
-autocmd FileType mail             let b:comment_leader = '> '
-autocmd FileType vim              let b:comment_leader = '" '
+autocmd FileType c,cpp,java,scala,verilog let b:comment_leader = '// '
+autocmd FileType sh,ruby,python           let b:comment_leader = '# '
+autocmd FileType conf,fstab,cnf,make      let b:comment_leader = '# '
+autocmd FileType tex,matlab               let b:comment_leader = '% '
+autocmd FileType mail                     let b:comment_leader = '> '
+autocmd FileType vim                      let b:comment_leader = '" '
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM
@@ -313,7 +316,7 @@ set completeopt=menu,menuone
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
 let g:snips_author = "Jan Kaisrlik"
-let g:snips_company = "FEL CVUT"
+let g:snips_company = "FEE CTU in Prague"
 
 
 
@@ -408,23 +411,23 @@ endif
 let g:airline_theme="kajza"
 "" if symbols are mess up
 if !exists('g:airline_symbols')
-"  let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 
 " unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-"let g:airline_symbols.space = "\ua0"
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
 "let g:Powerline_symbols = 'fancy'
-let g:clang_library_path = '/home/xeri/.vim/bundle/YouCompleteMe/third_party/ycmd/'
+let g:clang_library_path = '/home/kajza/.vim/bundle/YouCompleteMe/third_party/ycmd/'
