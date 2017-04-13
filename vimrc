@@ -1,4 +1,7 @@
-" Thx Miroslav Bendík for inspirating of vimrc file
+" Thx Miroslav Bendík for inspiration 
+
+" my  color scheme
+colorscheme dark
 
 set runtimepath+=$HOME/.vim/bundle/ultisnips
 runtime autoload/pathogen.vim
@@ -178,37 +181,6 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" syntax
-if exists("b:current_syntax")
-        finish
-endif
-syn case ignore
-" Taby a mezery TODO doenst work
-highlight Tab1 ctermbg=lightgreen guibg=#e0ffe0
-highlight Tab2 ctermbg=lightred   guibg=#ffe0e0
-highlight Tab3 ctermbg=lightblue  guibg=#e0e0ff
-highlight Tab4 ctermbg=lightcyan  guibg=#ffffe0
-
-	" Invisible chars
-	highlight NonText guibg=#4a4a59
-	highlight SpecialKey guibg=#4a4a59
-	highlight Comment ctermbg=DarkGrey  guibg=#4a4a59
-
-" Change color of the Search
-highlight Search ctermbg=DarkYellow  guibg=#4a4a59
-
-syn match Tab1 '\t'
-syn match Tab2 "\t\t"
-syn match Tab3 "\t\t\t"
-syn match Tab4 "\t\t\t\t"
-" Show trailing whitepace and spaces before a tab:
-syn match ExtraWhitespace /\s\+$\| \+\ze\t/
-" po nasapni <01>44= oznacuje
-syn match fixPrice         "<01>44=[^<01>]*"
-hi def link fixPrice         Label
-let b:current_syntax = "fix"
-
 " zviditelneni cursor line
 set cursorline
 
@@ -292,13 +264,16 @@ autocmd FileType vim                      let b:comment_leader = '" '
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_error_symbol = '>>'
-let g:ycm_show_diagnostics_ui = 1
+   let g:ycm_key_list_select_completion = ['<Down>']
+   let g:ycm_key_list_previous_completion = ['<Up>']
+   let g:ycm_key_invoke_completion = '<C-Space>'
+   let g:ycm_error_symbol = '>>'
+   let g:ycm_show_diagnostics_ui = 1
 
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+   " YCM will query the UltiSnips plugin for possible completions of snippet triggers.
+   let g:ycm_use_ultisnips_completer = 1
+   "  compilation flags
+   let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "Disable scratch window
 set completeopt=menu,menuone
 
