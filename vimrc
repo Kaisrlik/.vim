@@ -96,7 +96,7 @@ set sidescroll=5
 " Nastavenie šírky riadku na 80 znakov
 set textwidth=80
 " Nastavenie zvýraznenia dlhých riadkov
-set colorcolumn=160
+" set colorcolumn=160
 
 " Zobrazenie jednoduchého menu pri dopĺňaní s niekoľkými existujúcimi možnosťami
 set wildmenu
@@ -184,70 +184,12 @@ set foldlevel=2
 " zviditelneni cursor line
 set cursorline
 
-" Vim a Java
-augroup __java__
-   au!
-   au BufReadPre,BufNewFile *.java set fileencodings=utf-8 fileencoding=utf-8 encoding=utf-8
-   au BufRead,BufNewFile *.java set tw=0 foldmethod=indent cindent
-   au BufRead,BufNewFile *.java set tabstop=4 expandtab
-   au BufRead,BufNewFile *.java set foldmethod=syntax foldclose=all foldnestmax=1
-   au BufRead,BufNewFile *.java set guioptions=
-   au BufRead,BufNewFile *.java syn region myFold start="{" end="}" transparent fold
-   au BufRead,BufNewFile *.java noremap <Tab> >>
-   au BufRead,BufNewFile *.java so ~/javabrowser.vim
-   au BufRead,BufNewFile *.java noremap ,c O/**<CR>*<CR>*/<Esc>
-   au BufRead,BufNewFile *.java inoremap ,p * @param<Space>
-augroup END
-
 " Vim a assembler
 augroup __asm__
    au!
    au BufRead,BufNewFile *.S set tw=0 nowrap
 "   au BufRead,BufNewFile *.asm noremap <C-F9> :!nasm -f bin % -o output.com -l output.lst<CR>
 "   au BufRead,BufNewFile *.asm noremap <F9> :!start output.com<CR>
-augroup END
-
-
-" Editace binárních souborů
-augroup __raw__
-    au!
-    au BufReadPost  *.raw,*.bin %!xxd -g1
-    au BufReadPost  *.raw,*.bin set ft=xxd
-    au BufWritePre  *.raw,*.bin %!xxd -g1 -r
-    au BufWritePost *.raw,*.bin %!xxd -g1
-    au BufWritePost *.raw,*.bin set nomod
-augroup END
-
-augroup __latex__
-	au!
-	autocmd BufRead,BufNewFile *.tex inoremap ,ch \chapter{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,sa \section{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,sb \subsection{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,sc \subsubsection{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,ee \emph{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,tt \texttt{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,bb \textbf{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,uv \uv{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,vv \verb$$<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,hh \helpref{}{}<Left><Left><Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,cen \begin{center}<CR><CR>\end{center}<Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,quo \begin{quote}<CR><CR>\end{quote}<Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,tab \begin{tabular}{ll}<CR><CR>\end{tabular}<Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,tbl \begin{table}[htp]<CR><CR>\caption{}<CR>\label{}<CR>\end{table}<C-O>3k
-	autocmd BufRead,BufNewFile *.tex inoremap ,ver \begin{verbatim}<CR><CR>\end{verbatim}<Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,qv \begin{quote}\begin{verbatim}<CR><CR>\end{verbatim}\end{quote}<Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,fig \begin{figure}[htp]<CR><CR>\caption{}<CR>\label{}<CR>\end{figure}<C-O>3k
-	autocmd BufRead,BufNewFile *.tex inoremap ,it \begin{itemize}<CR>\item <CR>\end{itemize}<CR><Up><Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,en \begin{enumerate}<CR>\item <CR>\end{enumerate}<CR><Up><Up>
-	autocmd BufRead,BufNewFile *.tex inoremap ,ii \item<Space>
-	autocmd BufRead,BufNewFile *.tex inoremap ,in \index{!}<Left><Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,ff \footnote{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,re \ref{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,ll \label{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,ci \cite{}<Left>
-	autocmd BufRead,BufNewFile *.tex inoremap ,eq \begin{equation}<CR><CR>\end{equation}<CR><up><up>
-	autocmd BufRead,BufNewFile *.tex set spell
-"	autocmd BufRead,BufNewFile *.tex set spelllang=en
 augroup END
 
 " function graph fold
@@ -262,18 +204,6 @@ autocmd FileType tex,matlab               let b:comment_leader = '% '
 autocmd FileType mail                     let b:comment_leader = '> '
 autocmd FileType vim                      let b:comment_leader = '" '
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YCM
-   let g:ycm_key_list_select_completion = ['<Down>']
-   let g:ycm_key_list_previous_completion = ['<Up>']
-   let g:ycm_key_invoke_completion = '<C-Space>'
-   let g:ycm_error_symbol = '>>'
-   let g:ycm_show_diagnostics_ui = 1
-
-   " YCM will query the UltiSnips plugin for possible completions of snippet triggers.
-   let g:ycm_use_ultisnips_completer = 1
-   "  compilation flags
-   let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "Disable scratch window
 set completeopt=menu,menuone
 
@@ -281,9 +211,6 @@ set completeopt=menu,menuone
 " UltiSnips
 let g:snips_author = "Jan Kaisrlik"
 let g:snips_company = "FEE CTU in Prague"
-
-
-
 
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -293,8 +220,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
  let g:UltiSnipsEditSplit="vertical"
-
-
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 
@@ -370,6 +295,16 @@ if has("cscope")
 endif
 
 " YCM
+   let g:ycm_key_list_select_completion = ['<Down>']
+   let g:ycm_key_list_previous_completion = ['<Up>']
+   let g:ycm_key_invoke_completion = '<C-Space>'
+   let g:ycm_error_symbol = '>>'
+   let g:ycm_show_diagnostics_ui = 1
+
+   " YCM will query the UltiSnips plugin for possible completions of snippet triggers.
+   let g:ycm_use_ultisnips_completer = 1
+   "  compilation flags
+   let g:ycm_global_ycm_extra_conf='/home/kajza/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
    let g:clang_library_path = '/home/kajza/.vim/bundle/YouCompleteMe/third_party/ycmd/'
 
 "bufferline"
