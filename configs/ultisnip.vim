@@ -1,4 +1,8 @@
 " UltiSnips
+"
+let g:UltiSnipsSneppetsDir = "~/.vim/UltiSnips"
+
+"
 let g:snips_author = "Jan Kaisrlik"
 let g:snips_company = "XXXCompany"
 
