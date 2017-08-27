@@ -1,0 +1,2 @@
+"bufferline"
+   let g:bufferline_modified = '*'
