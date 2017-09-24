@@ -1,6 +1,8 @@
 CURDIR = $(shell pwd)
 
-all: fonts bundle
+.PHONY: fonts bundle
+
+all: bundle fonts
 
 bundle:
 	echo "Installing vim plugins"
@@ -12,6 +14,7 @@ fonts:
 	./fonts/powerline/install.sh
 
 install:
+	rm -rf ~/.vim
 	touch ~/.vim
 	ln -sf $(CURDIR) ~/.vim
-	ln -sf ~/.vim/vimrc ~/.vimrc
+	ln -sf $(CURDIR)/vimrc ~/.vimrc
