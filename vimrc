@@ -81,9 +81,6 @@ filetype indent on
 " shared clipboard with the system
 set clipboard=unnamedplus
 
-" should fix colors in tmux
-set term=screen-256color
-
 " Nastaveni historie na 1000 príkazu
 set history=1000
 " Zapne zobrazovani cisel radku
