@@ -42,7 +42,7 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 " z=, 1z= take first
 " set spell z= -> dictonary
 " zg correct world, zuw, zug remove
-nmap <silent> ,s :set spell!<CR>
+nmap <silent> <leader>s :set spell!<CR>
 
 " Fast moving between buffers
 map <F1> :bn<CR>
