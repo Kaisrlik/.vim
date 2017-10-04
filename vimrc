@@ -59,6 +59,13 @@ map <F6> :cl<cr><cr>
 map <F7> :NERDTree<CR>
 map <F8> :Explore<CR>
 
+" switch between headers and src
+map <C-1> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+" recreate tags file
+map <C-5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
+" create doxygen commnent
+map <C-6> :Dox<CR>
+
 " Nastavenie nekompatibilného režimu
 set nocompatible
 
