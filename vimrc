@@ -216,9 +216,10 @@ set completeopt=menu,menuone
 set splitbelow
 set splitright
 
-source configs/vimrc
-source configs/ftdetect.vim
-source configs/indexing.vim
-source configs/ultisnip.vim
-source configs/vim-airline.vim
-source configs/ycm.vim
+source ~/.vim/configs/vimrc
+source ~/.vim/configs/ftdetect.vim
+source ~/.vim/configs/indexing.vim
+source ~/.vim/configs/ultisnip.vim
+source ~/.vim/configs/vim-airline.vim
+source ~/.vim/configs/ycm.vim
+source ~/.vim/configs/ctrlp.vim
