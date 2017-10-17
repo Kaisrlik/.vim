@@ -223,3 +223,4 @@ source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
 source ~/.vim/configs/ycm.vim
 source ~/.vim/configs/ctrlp.vim
+source ~/.vim/configs/calendar.vim
