@@ -18,3 +18,6 @@ install:
 	touch ~/.vim
 	ln -sf $(CURDIR) ~/.vim
 	ln -sf $(CURDIR)/vimrc ~/.vimrc
+
+packages:
+	apt-get install exuberant-ctags
