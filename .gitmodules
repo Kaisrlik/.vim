@@ -37,3 +37,6 @@
 [submodule "bundle/calendar"]
 	path = bundle/calendar
 	url = https://github.com/itchyny/calendar.vim.git
+[submodule "bundle/searchcomplete"]
+	path = bundle/searchcomplete
+	url = https://github.com/vim-scripts/SearchComplete
