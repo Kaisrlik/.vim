@@ -6,6 +6,11 @@ augroup __asm__
 "   au BufRead,BufNewFile *.asm noremap <F9> :!start output.com<CR>
 augroup END
 
+augroup __makefile__
+   au!
+   au BufRead,BufNewFile Makefile set noexpandtab
+augroup END
+
 " function graph fold
 au BufRead,BufNewFile *.trace set filetype=trace
 
