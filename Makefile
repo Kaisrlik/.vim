@@ -19,5 +19,7 @@ install:
 	ln -sf $(CURDIR) ~/.vim
 	ln -sf $(CURDIR)/vimrc ~/.vimrc
 
+download:
+
 packages:
-	apt-get install exuberant-ctags
+	apt-get install exuberant-ctags cmake python-dev g++
