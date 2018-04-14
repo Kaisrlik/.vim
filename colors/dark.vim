@@ -19,7 +19,7 @@ hi IncSearch term=reverse cterm=reverse gui=reverse
 hi Search term=reverse ctermbg=3 guibg=Gold2
 hi MoreMsg term=bold ctermfg=2 gui=bold guifg=SeaGreen
 hi ModeMsg term=bold cterm=bold gui=bold
-hi LineNr term=underline ctermfg=3 guifg=Red3
+hi LineNr term=underline ctermfg=240 guifg=Red3
 hi Question term=standout ctermfg=2 gui=bold guifg=SeaGreen
 hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Black
 hi StatusLineNC term=reverse cterm=reverse gui=bold guifg=PeachPuff guibg=Gray45
@@ -38,9 +38,12 @@ hi DiffText term=reverse cterm=bold ctermbg=1 gui=bold guibg=#ff8060
 hi Cursor	guibg=khaki guifg=slategrey
 hi lCursor	guibg=khaki guifg=slategrey
 
+hi CursorLine ctermbg=236 guibg=#75756e cterm=none
+hi CursorLineNr ctermbg=236 cterm=bold guibg=#75756e
+
 " Colors for syntax highlighting
 " hi Comment term=bold ctermfg=4 guifg=#406090
-hi Comment ctermfg=8 guifg=#808080
+hi Comment ctermfg=247 guifg=#808080
 " hi Constant term=underline ctermfg=1 guifg=#c00058
 hi Constant ctermfg=brown guifg=#ffa0a0
 hi Special term=bold ctermfg=5 guifg=SlateBlue

@@ -166,9 +166,6 @@ set hlsearch
 " automatic move during writing
 set incsearch
 
-
-"colorscheme default
-
 " Aktivovanie podpory myši vo všetkých režimoch
 set mouse=a
 " Skrytie kurzora počas písania
