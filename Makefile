@@ -8,6 +8,7 @@ bundle:
 	echo "Installing vim plugins"
 	git submodule update --init --recursive
 	cd ./bundle/YouCompleteMe && ./install.py --clang-completer
+	cd ./bundle/fzf-app/ && ./install
 
 fonts:
 	echo "Installing fonts ... "
@@ -22,4 +23,4 @@ install:
 download:
 
 packages:
-	apt-get install exuberant-ctags cmake python-dev g++
+	apt-get install exuberant-ctags cmake python-dev g++ silversearcher-ag

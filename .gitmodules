@@ -49,3 +49,9 @@
 [submodule "bundle/errormarker.vim"]
 	path = bundle/errormarker.vim
 	url = git://github.com/mh21/errormarker.vim
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/fzf-app"]
+	path = bundle/fzf-app
+	url = https://github.com/junegunn/fzf.git

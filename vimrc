@@ -215,6 +215,7 @@ set splitright
 
 source ~/.vim/configs/vimrc
 source ~/.vim/configs/ftdetect.vim
+source ~/.vim/configs/fzf.vim
 source ~/.vim/configs/indexing.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
