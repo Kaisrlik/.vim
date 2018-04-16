@@ -1,2 +1,6 @@
 "bufferline"
    let g:bufferline_modified = '*'
+
+" grep
+
+set grepformat=%f:%l:%c:%m,%f:%l:%m

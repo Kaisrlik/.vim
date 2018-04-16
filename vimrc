@@ -75,6 +75,9 @@ set nocompatible
 set ruler
 set selection=exclusive
 
+" Avoid some unwanted messages when we have to press enter
+set shortmess=aI
+
 " Hľadanie nastavení v lokálnych súboroch
 set exrc
 
@@ -208,6 +211,9 @@ set foldlevel=2
 
 " zviditelneni cursor line
 set cursorline
+
+set complete=.,w,b,u,t
+" set complete-=i
 
 "Disable scratch window
 set completeopt=menu,menuone
