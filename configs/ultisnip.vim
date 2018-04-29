@@ -1,6 +1,8 @@
 " UltiSnips
 "
-let g:UltiSnipsSneppetsDir = "~/.vim/UltiSnips"
+" load snippets from honza/vim-snippets
+let g:UltiSnipsSneppetsDirectories = [ "~/.vim/bundle/vim-snippets/UltiSnips", "~/.vim/UltiSnips" ]
+let g:UltiSnipsSneppetsDir = "~/.vim/after/snippets"
 
 "
 let g:snips_author = "Jan Kaisrlik"
