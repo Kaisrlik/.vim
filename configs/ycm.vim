@@ -19,15 +19,13 @@ set backspace=indent,eol,start
 " scrolling in autocomplete menu with j and k, or c-j and c-k
 " should work only when the menu has been entered either by tab or arrows
 set completeopt+=noinsert
-inoremap <expr> j ((pumvisible() && !empty(v:completed_item))?("\<C-n>"):("j"))
 inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("\<C-j>"))
-inoremap <expr> k ((pumvisible() && !empty(v:completed_item))?("\<C-p>"):("k"))
 inoremap <expr> <C-k> ((pumvisible() && !empty(v:completed_item))?("\<C-p>"):("\<C-k>"))
 
-" change behavior of enter in completion menu
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" inoremap <expr> <tab> ((pumvisible() && !empty(v:completed_item))?("\<C-n>"):("<tab>"))
+inoremap <expr> <tab> pumvisible() ? ("\<C-n>") : ("\<tab>")
+" TODO: First <C-y> still firing popup menu
+inoremap <expr> <cr>  pumvisible() ? ( exists('v:completed_item') && !empty(v:completed_item)
+	\ ?("\<C-y>") :("\<C-y><cr>") ) :("<cr>")
 
 let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
@@ -95,9 +93,3 @@ function! s:onCompleteDone()
   let snippet = snippet . ')' . "$0"
   return UltiSnips#Anon(snippet)
 endfunction
-
-" map the autocommand to "enter"
-autocmd VimEnter * imap <expr> <cr>
-      \ pumvisible() && exists('v:completed_item') && !empty(v:completed_item) ?
-      \ (v:completed_item.word != '' && v:completed_item.kind == 'f' ?
-      \ "\<C-R>=\<SID>onCompleteDone()\<CR>" : "\<C-y>") : ("<cr>")
