@@ -7,9 +7,6 @@
 [submodule "bundle/YouCompleteMe"]
    path = bundle/YouCompleteMe
    url = git://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/UltiSnips"]
-   path = bundle/UltiSnips
-   url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -49,3 +46,6 @@
 [submodule "bundle/fzf-app"]
 	path = bundle/fzf-app
 	url = https://github.com/junegunn/fzf.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
