@@ -28,7 +28,6 @@ inoremap <expr> <cr>  pumvisible() ? ( exists('v:completed_item') && !empty(v:co
 	\ ?("\<C-y>") :("\<C-y><cr>") ) :("<cr>")
 
 let g:ycm_filepath_completion_use_working_dir = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
 " let g:ycm_extra_conf_globlist = ['~/XXX/XXx']
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
