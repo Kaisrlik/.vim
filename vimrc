@@ -31,6 +31,9 @@ let mapleader = ","
 " format while document and return back
 nmap <leader>g :normal mggg=G'g<cr>:delmarks g<cr>zz
 
+" call ag on current word
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+
 " searching for visually selected text
 vnoremap // y/<C-R>"<CR>
 
