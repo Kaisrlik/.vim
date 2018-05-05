@@ -39,6 +39,9 @@ vnoremap <Space> za
 nnoremap , <NOP>
 let mapleader = ","
 
+" togle tagbar
+nnoremap <leader>1 :TagbarToggle<CR>
+
 " format while document and return back
 nmap <leader>g :normal mggg=G'g<cr>:delmarks g<cr>zz
 
