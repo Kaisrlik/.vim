@@ -11,6 +11,25 @@ augroup __makefile__
    au BufRead,BufNewFile Makefile set noexpandtab
 augroup END
 
+"" Remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+"" txt
+augroup vimrc-wrapping
+  autocmd!
+  autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+augroup END
+
+"" cmake
+augroup __cmake__
+  autocmd!
+  autocmd FileType make setlocal noexpandtab
+  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+augroup END
+
 " function graph fold
 au BufRead,BufNewFile *.trace set filetype=trace
 

@@ -8,6 +8,17 @@ runtime autoload/pathogen.vim
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
 
 imap \... …
 noremap <F1> ""
@@ -50,6 +61,11 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 " zg correct world, zuw, zug remove
 nmap <silent> <leader>s :set spell!<CR>
 
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap N nzzzv
+nnoremap n Nzzzv
+
 " Fast moving between buffers
 map <F1> :bn<CR>
 map <F2> :bp<CR>
@@ -71,6 +87,14 @@ map <C-1> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map <C-5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 " create doxygen commnent
 map <C-6> :Dox<CR>
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " Nastavenie nekompatibilného režimu
 set nocompatible
