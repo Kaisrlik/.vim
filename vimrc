@@ -19,6 +19,10 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+cnoreabbrev qb bdelete
+cnoreabbrev Qb bdelete
+cnoreabbrev qt tabclose
+cnoreabbrev Qt tabclose
 
 imap \... …
 noremap <F1> ""

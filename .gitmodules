@@ -1,6 +1,6 @@
-#[submodule "bundle/supertab"]
-#   path = bundle/supertab
-#   url = git://github.com/ervandew/supertab.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/YouCompleteMe"]
    path = bundle/YouCompleteMe
    url = git://github.com/Valloric/YouCompleteMe.git
