@@ -1,6 +1,8 @@
 "bufferline"
    let g:bufferline_modified = '*'
 
+command! StripWhitespace execute "call StripWhitespace()"
+
 " Strip trailing whitespace
 function! StripWhitespace()
 	let save_cursor = getpos(".")
