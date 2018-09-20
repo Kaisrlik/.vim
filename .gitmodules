@@ -55,3 +55,6 @@
 [submodule "bundle/targets"]
 	path = bundle/targets
 	url = https://github.com/wellle/targets.vim.git
+[submodule "bundle/notmuch-abook"]
+	path = bundle/notmuch-abook
+	url = https://github.com/guyzmo/notmuch-abook.git
