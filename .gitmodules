@@ -45,7 +45,7 @@
 	url = git://github.com/honza/vim-snippets.git
 [submodule "bundle/UltiSnips"]
 	path = bundle/UltiSnips
-	url = git://github.com/vim-scripts/UltiSnips.git
+	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/vim-startify"]
 	path = bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
