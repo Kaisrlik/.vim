@@ -191,9 +191,9 @@ set shiftround
 
 set noexpandtab
 " Nastavenie zobrazovanej šírky tabulátora
-set tabstop=3
+set tabstop=4
 " Počet vložených medzier pri zväčšení odsadenia (automaticky sa prevedú na tabulátor)
-set shiftwidth=3
+set shiftwidth=4
 
 " Zobrazenie čo najväčšej časti posledného riadku
 set display=lastline
@@ -234,8 +234,8 @@ set listchars=tab:▶\
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fold default
 
-" exten left-side by 3 char used for folding.
-"set foldcolumn=3
+" exten left-side by 4 char used for folding.
+"set foldcolumn=4
 
 let g:markdown_fold_style='nested'
 set foldmethod=indent

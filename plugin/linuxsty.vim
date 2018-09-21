@@ -27,9 +27,9 @@ augroup linuxsty
     autocmd!
 
     autocmd FileType c,cpp call s:LinuxConfigure()
-    autocmd FileType diff setlocal ts=3
-    autocmd FileType kconfig setlocal ts=3 sw=3 sts=3 noet
-    autocmd FileType dts setlocal ts=3 sw=3 sts=3 noet
+    autocmd FileType diff setlocal ts=4
+    autocmd FileType kconfig setlocal ts=4 sw=4 sts=4 noet
+    autocmd FileType dts setlocal ts=4 sw=4 sts=4 noet
 augroup END
 
 function s:LinuxConfigure()
@@ -61,9 +61,9 @@ function! s:LinuxCodingStyle()
 endfunction
 
 function s:LinuxFormatting()
-    setlocal tabstop=3
-    setlocal shiftwidth=3
-    setlocal softtabstop=3
+    setlocal tabstop=4
+    setlocal shiftwidth=4
+    setlocal softtabstop=4
     setlocal textwidth=80
     setlocal noexpandtab
 
