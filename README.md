@@ -1,9 +1,26 @@
 .vim
 ====
 
+This configuration setup allows me work faster with editing ordinary files to
+write codes like in IDE(completition, fast overwiev, grepping, ...).
+
+When I started with Vim there was no IDE good for Linux kernel programming. From
+the moment I start using vim where I time to time add such a simple script or
+install pluging to help me develop faster with the IDE.
+
+Thank you guys( Thx Miroslav Bendík and Tomas Baca ) for inspiration of your `vimrc` files.
+
 ## How to clone the repository
 
     git clone https://github.com/Kaisrlik/.vim.git
+
+## installion
+
+Just call a `make` :]
+
+WARN: If you will call `make istall` it will relink configuration file to this repo.
+
+Otherwise I recomand to take a look what [Makefile](Makefile) contains.
 
 ## Plugins
 
