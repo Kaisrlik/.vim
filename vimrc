@@ -233,8 +233,8 @@ set foldlevel=2
 " show cursor line
 set cursorline
 
-set complete=.,w,b,u,t
-" set complete-=i
+set complete=.,w,b,u,t,i
+" set complete+=k~/vocabulary.txt
 
 "Disable scratch window
 set completeopt=menu,menuone

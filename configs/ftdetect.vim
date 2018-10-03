@@ -26,12 +26,17 @@ augroup END
 "" cmake
 augroup __cmake__
   autocmd!
-  autocmd FileType make setlocal noexpandtab
-  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+  autocmd FileType make set noexpandtab
+  autocmd BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 augroup END
 
 " function graph fold
 au BufRead,BufNewFile *.trace set filetype=trace
+
+" .bb, .bbappend and .bbclass
+au BufNewFile,BufRead *.{bb,bbappend,bbclass} set filetype=bitbake
+" .inc
+au BufNewFile,BufRead *.inc set filetype=bitbake
 
 au BufRead,BufNewFile SConstruct set filetype=python
 au BufRead,BufNewFile SConscript* set filetype=python
