@@ -58,3 +58,9 @@
 [submodule "bundle/notmuch-abook"]
 	path = bundle/notmuch-abook
 	url = https://github.com/guyzmo/notmuch-abook.git
+[submodule "bundle/orgmode"]
+	path = bundle/orgmode
+	url = https://github.com/jceb/vim-orgmode.git
+[submodule "bundle/speeddating"]
+	path = bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating.git

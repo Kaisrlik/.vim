@@ -40,6 +40,8 @@ vnoremap <Space> za
 " map leader key
 nnoremap , <NOP>
 let mapleader = ","
+nnoremap ; <NOP>
+let maplocalleader = ";"
 
 " togle tagbar
 nnoremap <leader>1 :TagbarToggle<CR>
