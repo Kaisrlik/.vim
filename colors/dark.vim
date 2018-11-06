@@ -52,8 +52,15 @@ hi Statement term=bold ctermfg=3 gui=bold guifg=Brown
 hi PreProc term=underline ctermfg=5 guifg=Magenta3
 hi Type term=underline ctermfg=2 gui=bold guifg=SeaGreen
 hi Ignore cterm=bold ctermfg=7 guifg=bg
-hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
-hi Todo term=standout ctermfg=0 ctermbg=3 guifg=Blue guibg=Yellow
+hi Error cterm=bold ctermfg=7 ctermbg=1
+hi SpellBad ctermfg=7 ctermbg=1
+hi Todo cterm=bold ctermfg=3 ctermbg=0
+
+" git
+hi diffRemoved ctermfg=9
+hi diffAdded ctermfg=10
+hi diffFile ctermfg=6
+hi diffSubname ctermfg=2
 
 " syn case ignore
 
