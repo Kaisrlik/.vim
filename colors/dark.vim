@@ -11,7 +11,7 @@ let colors_name = "dark"
 
 hi Normal	guifg=White guibg=grey20
 
-hi SpecialKey term=bold ctermfg=4 guifg=Blue
+hi SpecialKey term=bold ctermfg=239 guifg=Blue
 hi NonText term=bold cterm=bold ctermfg=4 gui=bold guifg=Blue
 hi Directory term=bold ctermfg=4 guifg=Blue
 hi ErrorMsg term=standout cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
@@ -24,7 +24,7 @@ hi Question term=standout ctermfg=2 gui=bold guifg=SeaGreen
 hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Black
 hi StatusLineNC term=reverse cterm=reverse gui=bold guifg=PeachPuff guibg=Gray45
 hi VertSplit term=reverse cterm=reverse gui=bold guifg=White guibg=Gray45
-hi Title term=bold ctermfg=5 gui=bold guifg=DeepPink3
+hi Title term=bold ctermfg=3
 hi Visual term=reverse cterm=reverse gui=reverse guifg=Grey80 guibg=fg
 hi VisualNOS term=bold,underline cterm=bold,underline gui=bold,underline
 hi WarningMsg term=standout ctermfg=1 gui=bold guifg=Red
@@ -35,8 +35,6 @@ hi DiffAdd term=bold ctermbg=4 guibg=White
 hi DiffChange term=bold ctermbg=5 guibg=#edb5cd
 hi DiffDelete term=bold cterm=bold ctermfg=4 ctermbg=6 gui=bold guifg=LightBlue guibg=#f6e8d0
 hi DiffText term=reverse cterm=bold ctermbg=1 gui=bold guibg=#ff8060
-hi Cursor	guibg=khaki guifg=slategrey
-hi lCursor	guibg=khaki guifg=slategrey
 
 hi CursorLine ctermbg=236 guibg=#75756e cterm=none
 hi CursorLineNr ctermbg=236 cterm=bold guibg=#75756e
@@ -60,7 +58,7 @@ hi Todo cterm=bold ctermfg=3 ctermbg=0
 hi diffRemoved ctermfg=9
 hi diffAdded ctermfg=10
 hi diffFile ctermfg=6
-hi diffSubname ctermfg=2
+hi diffSubname cterm=bold ctermfg=3
 
 " syn case ignore
 
