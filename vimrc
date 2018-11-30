@@ -66,6 +66,7 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 " z=, 1z= take first
 " set spell z= -> dictonary
 " zg correct world, zuw, zug remove
+" TODO: set cursorline do not show spellcheck on current line
 nmap <silent> <leader>s :set spell!<CR>
 
 " Search mappings: These will make it so that going to the next one in a
@@ -215,9 +216,11 @@ set smartindent
 
  " set Visible given invisible characters
 set list
-"set listchars=tab:>
 set listchars=tab:▶\ 
-"set listchars=tab:▶\ ,eol:¬
+set listchars+=trail:◥
+" set listchars+=eol:¬
+" set listchars+=extends:❯
+" set listchars+=precedes:❮
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
