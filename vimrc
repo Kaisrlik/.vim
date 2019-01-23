@@ -66,8 +66,7 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 " z=, 1z= take first
 " set spell z= -> dictonary
 " zg correct world, zuw, zug remove
-" TODO: set cursorline do not show spellcheck on current line
-nmap <silent> <leader>s :set spell!<CR>
+nmap <silent> <leader>s :set spell!<bar> :set cursorline!<CR>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
