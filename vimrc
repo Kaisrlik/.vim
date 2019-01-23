@@ -159,7 +159,7 @@ set wildmode=longest:full,full
 
 " ignore competition of given file types
 set wildignore=Ui_*,*~,*.bak,*.log,*.o
-
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.git,
 
 " automatic format
 set formatoptions=croq1
