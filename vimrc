@@ -51,6 +51,7 @@ nmap <leader>g :normal mggg=G'g<cr>:delmarks g<cr>zz
 
 " call ag on current word
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <C-p> :Ag<CR>
 
 " searching for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -254,5 +255,4 @@ source ~/.vim/configs/indexing.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
 source ~/.vim/configs/ycm.vim
-source ~/.vim/configs/ctrlp.vim
 source ~/.vim/configs/calendar.vim
