@@ -33,11 +33,6 @@ augroup END
 " function graph fold
 au BufRead,BufNewFile *.trace set filetype=trace
 
-" .bb, .bbappend and .bbclass
-au BufNewFile,BufRead *.{bb,bbappend,bbclass} set filetype=bitbake expandtab
-" .inc
-au BufNewFile,BufRead *.inc set filetype=bitbake expandtab
-
 au BufRead,BufNewFile SConstruct set filetype=python
 au BufRead,BufNewFile SConscript* set filetype=python
 
