@@ -241,6 +241,7 @@ set foldlevel=2
 set cursorline
 
 set complete=.,w,b,u,t,i
+set complete+=kspell
 " set complete+=k~/vocabulary.txt
 
 "Disable scratch window
