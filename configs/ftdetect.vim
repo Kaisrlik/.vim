@@ -8,7 +8,7 @@ augroup END
 
 augroup __makefile__
    au!
-   au BufRead,BufNewFile Makefile set noexpandtab
+   autocmd FileType make set noexpandtab
 augroup END
 
 "" Remember cursor position
@@ -17,16 +17,16 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-"" txt
-augroup vimrc-wrapping
-  autocmd!
-  autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
-augroup END
+" "" txt
+" augroup vimrc-wrapping
+"   autocmd!
+"   autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+" augroup END
 
 "" cmake
 augroup __cmake__
   autocmd!
-  autocmd FileType make set noexpandtab
+  autocmd FileType cmake set expandtab
   autocmd BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 augroup END
 
