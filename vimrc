@@ -68,6 +68,8 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 " set spell z= -> dictonary
 " zg correct world, zuw, zug remove
 nmap <silent> <leader>s :set spell!<bar> :set cursorline!<CR>
+" Disable highlighting of Capital letter word located behind end of the sentence
+set spellcapcheck=
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
