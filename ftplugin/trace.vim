@@ -21,10 +21,10 @@ augroup __trace__
    if exists("b:did_ftplugin")
      finish
    endif
-   
+
    " Don't load another plugin for this buffer
    let b:did_ftplugin = 1
-   
+
    function! FunctionGraphFoldExpr(lnum)
      let line = getline(a:lnum)
      if line[-1:] == '{'
@@ -38,7 +38,7 @@ augroup __trace__
        return '='
      endif
    endfunction
-   
+
    function! FunctionGraphFoldText()
      let s = split(getline(v:foldstart), '|', 1)
      if getline(v:foldend+1) =~ 'finish_task_switch() {$'
@@ -49,15 +49,15 @@ augroup __trace__
      endif
      return join(s, '|')
    endfunction
-   
+
    setlocal foldexpr=FunctionGraphFoldExpr(v:lnum)
    setlocal foldtext=FunctionGraphFoldText()
    setlocal foldcolumn=12
    setlocal foldmethod=expr
-   
+
    " Set 'comments' to format dashed lists in comments
    setlocal comments=s:#\ ,m:#\ ,e:#
-   
+
    " Set 'commentstring' to put the marker after a #.
    setlocal commentstring=#\ %s
 
