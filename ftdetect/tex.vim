@@ -31,6 +31,7 @@ augroup __latex__
 	autocmd BufRead,BufNewFile *.tex inoremap ,ci \cite{}<Left>
 	autocmd BufRead,BufNewFile *.tex inoremap ,eq \begin{equation}<CR><CR>\end{equation}<CR><up><up>
 	autocmd BufRead,BufNewFile *.tex set spell
+	autocmd FileType tex,plaintex let b:comment_leader = '% '
 "	autocmd BufRead,BufNewFile *.tex set spelllang=en
 augroup END
 
