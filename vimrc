@@ -252,6 +252,7 @@ set splitbelow
 set splitright
 
 source ~/.vim/configs/vimrc
+source ~/.vim/configs/errormaker.vim
 source ~/.vim/configs/ftdetect.vim
 source ~/.vim/configs/fzf.vim
 source ~/.vim/configs/indexing.vim
