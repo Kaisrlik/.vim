@@ -49,6 +49,9 @@ nnoremap <leader>1 :TagbarToggle<CR>
 " format while document and return back
 nmap <leader>g :normal mggg=G'g<cr>:delmarks g<cr>zz
 
+" copy visually selected text to systems clipboard
+vnoremap <C-c> "*y
+
 " call ag on current word
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <C-p> :Ag<CR>
