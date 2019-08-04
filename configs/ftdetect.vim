@@ -39,6 +39,7 @@ au BufRead,BufNewFile SConscript* set filetype=python
 " Commenting blocks of code.
 let b:comment_leader = '# '
 autocmd FileType c,cpp,java,scala,verilog let b:comment_leader = '// '
+autocmd FileType dts                      let b:comment_leader = '// '
 autocmd FileType sh,ruby,python           let b:comment_leader = '# '
 autocmd FileType conf,fstab,cnf,make      let b:comment_leader = '# '
 autocmd FileType matlab                   let b:comment_leader = '% '
