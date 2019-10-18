@@ -12,7 +12,7 @@
 " options will be applied only if "/linux/" or "/kernel" is in buffer's path.
 "
 "   let g:linuxsty_patterns = [ "/linux/", "/kernel/" ]
-let g:linuxsty_patterns = [ "/linux-imx6/", "/linux/", "/kernel/" ]
+let g:linuxsty_patterns = [ "/linux-imx6/", "/linux/", "/kernel/", "/linux-kernel/" ]
 
 " TODO: Add path to ycm completition file
 

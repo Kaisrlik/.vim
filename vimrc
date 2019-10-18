@@ -62,6 +62,11 @@ vnoremap // y/<C-R>"<CR>
 " Allow saving of files with sudo when I forgot to start vim with bad privilages
 cmap w!! w !sudo tee > /dev/null %
 
+" start termdebug
+nmap <leader>t :packadd termdebug<CR>:Termdebug<CR>
+" TODO: add mapping for debuging, can take a look if we are in termdebug and
+" based on it change mapping of some keys?
+
 " Commenting block of code
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
@@ -175,10 +180,8 @@ set formatoptions=croq1
 "                 |+ automatic comments on the new line
 "                 + automatic wrapping of comments
 
-" " gw -> use another format
-
 " gq -> will use `par`
-set formatprg=par\ -w80rjq
+" set formatprg=par\ -w80rjq
 
 set copyindent
 set preserveindent
@@ -263,3 +266,4 @@ source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
 source ~/.vim/configs/ycm.vim
 source ~/.vim/configs/calendar.vim
+" source ~/.vim/configs/termdebug.vim
