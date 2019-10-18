@@ -92,3 +92,7 @@ function! s:onCompleteDone()
   let snippet = snippet . ')' . "$0"
   return UltiSnips#Anon(snippet)
 endfunction
+
+" Naturally, this needs to be set to wherever your rust
+" source tree resides.
+let g:ycm_rust_src_path = '/home/xeri/devel/teaching/rust_workshop/rust/src/'

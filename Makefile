@@ -8,6 +8,7 @@ bundle:
 	echo "Installing vim plugins"
 	git submodule update --init --recursive
 	python3 bundle/YouCompleteMe/install.py --clang-completer
+	python3 bundle/YouCompleteMe/install.py --racer-completer
 	cd ./bundle/fzf-app/ && ./install
 
 fonts:
