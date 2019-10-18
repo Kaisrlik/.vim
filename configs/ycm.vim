@@ -12,6 +12,7 @@ let g:ycm_use_ultisnips_completer = 1
 "  compilation flags
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:clang_library_path = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/'
+let g:ycm_clangd_binary_path = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/tests/clangd'
 
 set backspace=2
 set backspace=indent,eol,start
