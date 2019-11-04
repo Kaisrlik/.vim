@@ -64,3 +64,6 @@
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "bundle/riv"]
+	path = bundle/riv
+	url = git@github.com:gu-fan/riv.vim.git
