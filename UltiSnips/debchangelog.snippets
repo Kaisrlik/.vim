@@ -1,0 +1,14 @@
+snippet log "Add new changelog entry"
+${1:`!p
+if not snip.c:
+	import string
+	name =  open(path, "r").readlines()[snip.line + 1].rstrip()
+	snip.rv = ('%s' % name)
+else:
+	snip.rv = snip.c`} (${2:`echo aa`}) ${4:unstable}; urgency=medium
+
+  * ${3}
+
+ -- ${6:`!v g:snips_author`} <jan.kaisrlik@avast.com>  ${5:`date '+%a, %d %b %Y %H:%M:%S %z'`}
+
+endsnippet
