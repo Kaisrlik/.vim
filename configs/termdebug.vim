@@ -1,0 +1,9 @@
+" toggle break
+map <C-b> :Break<CR>
+map <C-o> :Over<CR>
+map <C-c> :Continue<CR>
+map <C-r> :Run<CR>
+map <C-n> :Next<CR>
+map <C-s> :Stop<CR>
+map <C-f> :Finish<CR>
+map <C-e> :Evaluate<CR>
