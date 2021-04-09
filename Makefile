@@ -24,4 +24,5 @@ install:
 download:
 
 packages:
-	apt-get install par exuberant-ctags cmake python3-dev g++ silversearcher-ag
+	apt-get install par exuberant-ctags cmake python3-dev g++ silversearcher-ag \
+		shellcheck
