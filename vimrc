@@ -264,6 +264,5 @@ source ~/.vim/configs/fzf.vim
 source ~/.vim/configs/indexing.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
-source ~/.vim/configs/ycm.vim
 source ~/.vim/configs/calendar.vim
 " source ~/.vim/configs/termdebug.vim

@@ -4,12 +4,19 @@ CURDIR = $(shell pwd)
 
 all: bundle fonts
 
-bundle:
+bundle: ccls
 	echo "Installing vim plugins"
 	git submodule update --init --recursive
-	python3 bundle/YouCompleteMe/install.py --clang-completer
-	python3 bundle/YouCompleteMe/install.py --racer-completer
 	cd ./bundle/fzf-app/ && ./install
+
+# can be replaced by apt install ccls
+ccls:
+	cd bundle/ccls; cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_PREFIX_PATH=/usr/lib/llvm-11 \
+		-DLLVM_INCLUDE_DIR=/usr/lib/llvm-11/include \
+		-DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-11/
+	cd bundle/ccls; cmake --build Release
+	sudo make install -C bundle/ccls/Release
 
 fonts:
 	echo "Installing fonts ... "
@@ -25,4 +32,4 @@ download:
 
 packages:
 	apt-get install par exuberant-ctags cmake python3-dev g++ silversearcher-ag \
-		shellcheck
+		shellcheck clang libclang-11-dev
