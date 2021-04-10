@@ -18,6 +18,9 @@ ccls:
 	cd bundle/ccls; cmake --build Release
 	sudo make install -C bundle/ccls/Release
 
+lc-neovim:
+	cd bundle/languageclient-neovim; bash install.sh
+
 fonts:
 	echo "Installing fonts ... "
 	./fonts/powerline/install.sh

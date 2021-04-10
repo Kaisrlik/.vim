@@ -2,6 +2,7 @@
 colorscheme dark
 
 set runtimepath+=$HOME/.vim/bundle/ultisnips
+set runtimepath+=$HOME/.vim/bundle/languageclient-neovim
 runtime autoload/pathogen.vim
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()
@@ -261,6 +262,7 @@ source ~/.vim/configs/vimrc
 source ~/.vim/configs/errormaker.vim
 source ~/.vim/configs/ftdetect.vim
 source ~/.vim/configs/fzf.vim
+source ~/.vim/configs/languageclient-neovim.vim
 source ~/.vim/configs/indexing.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
