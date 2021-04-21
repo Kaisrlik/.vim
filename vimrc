@@ -252,7 +252,8 @@ set complete+=kspell
 " set complete+=k~/vocabulary.txt
 
 "Disable scratch window
-set completeopt=menu,menuone
+set completeopt=menu,menuone,longest,noinsert
+
 
 " more natural splits
 set splitbelow
@@ -268,3 +269,4 @@ source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
 source ~/.vim/configs/calendar.vim
 " source ~/.vim/configs/termdebug.vim
+source ~/.vim/configs/omnifunc.vim
