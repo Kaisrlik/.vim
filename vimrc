@@ -259,14 +259,14 @@ set completeopt=menu,menuone,longest,noinsert
 set splitbelow
 set splitright
 
-source ~/.vim/configs/vimrc
+" source ~/.vim/configs/termdebug.vim
+source ~/.vim/configs/calendar.vim
 source ~/.vim/configs/errormaker.vim
 source ~/.vim/configs/ftdetect.vim
 source ~/.vim/configs/fzf.vim
-source ~/.vim/configs/languageclient-neovim.vim
 source ~/.vim/configs/indexing.vim
+source ~/.vim/configs/languageclient-neovim.vim
+source ~/.vim/configs/omnifunc.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
-source ~/.vim/configs/calendar.vim
-" source ~/.vim/configs/termdebug.vim
-source ~/.vim/configs/omnifunc.vim
+source ~/.vim/configs/vimrc
