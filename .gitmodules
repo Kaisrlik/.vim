@@ -28,9 +28,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
-[submodule "bundle/errormarker.vim"]
-	path = bundle/errormarker.vim
-	url = git://github.com/mh21/errormarker.vim
 [submodule "bundle/fzf.vim"]
 	path = bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git

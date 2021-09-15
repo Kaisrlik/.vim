@@ -261,7 +261,6 @@ set splitright
 
 " source ~/.vim/configs/termdebug.vim
 source ~/.vim/configs/calendar.vim
-source ~/.vim/configs/errormaker.vim
 source ~/.vim/configs/ftdetect.vim
 source ~/.vim/configs/fzf.vim
 source ~/.vim/configs/indexing.vim
