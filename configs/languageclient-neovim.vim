@@ -33,6 +33,8 @@ nnoremap 2 :call LanguageClient#textDocument_references({'includeDeclaration': v
 nnoremap 1 :call LanguageClient#textDocument_hover()<CR>
 nnoremap 3 :call LanguageClient#textDocument_rename()<CR>
 
+nnoremap <C-@> <C-G>u<C-X><C-U>
+
 " bash linters does not work for this reason I'm keeping ale
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1

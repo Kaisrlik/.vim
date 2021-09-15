@@ -269,3 +269,5 @@ source ~/.vim/configs/omnifunc.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
 source ~/.vim/configs/vimrc
+
+let g:UltiSnipsListSnippets = "<C-U>"
