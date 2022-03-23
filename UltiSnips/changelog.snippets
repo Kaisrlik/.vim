@@ -1,4 +1,4 @@
-snippet log "Add new changelog entry"
+snippet logfull "Add new changelog entry"
 ${1:`!p
 if not snip.c:
 	import string
@@ -13,6 +13,11 @@ else:
 
 endsnippet
 
+
+snippet log "add date entry"
+${1:project} (${2:`echo 1.0.0`}) ${3:unstable}; urgency=${4:medium}
+endsnippet
+
 snippet logdate "add date entry"
-${1:`!v g:snips_author`} <jan.kaisrlik@avast.com>  ${5:`date '+%a, %d %b %Y %H:%M:%S %z'`}
+${1:`!v g:snips_author`} <${2:`!v g:snips_email`}>  ${3:`date '+%a, %d %b %Y %H:%M:%S %z'`}
 endsnippet
