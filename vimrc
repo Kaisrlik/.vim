@@ -63,11 +63,6 @@ vnoremap // y/<C-R>"<CR>
 " Allow saving of files with sudo when I forgot to start vim with bad privilages
 cmap w!! w !sudo tee > /dev/null %
 
-" start termdebug
-nmap <leader>t :packadd termdebug<CR>:Termdebug<CR>
-" TODO: add mapping for debuging, can take a look if we are in termdebug and
-" based on it change mapping of some keys?
-
 " Commenting block of code
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
@@ -259,7 +254,7 @@ set completeopt=menu,menuone,longest,noinsert
 set splitbelow
 set splitright
 
-" source ~/.vim/configs/termdebug.vim
+source ~/.vim/configs/termdebug.vim
 source ~/.vim/configs/calendar.vim
 source ~/.vim/configs/ftdetect.vim
 source ~/.vim/configs/fzf.vim
