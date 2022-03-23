@@ -1,0 +1,5 @@
+# example of ccls file, please edit and copy it to .ccls
+clang
+-std=c++17
+-stdlib=libc++
+-isystem/usr/local/include
