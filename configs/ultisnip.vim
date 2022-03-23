@@ -6,7 +6,8 @@ let g:UltiSnipsSneppetsDir = "~/.vim/after/snippets"
 
 "
 let g:snips_author = "Jan Kaisrlik"
-let g:snips_company = "XXXCompany"
+" let g:snips_company = "Intel"
+let g:snips_email = "jan.kaisrlik@intel.com"
 
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"
