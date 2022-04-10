@@ -25,9 +25,6 @@
 [submodule "bundle/searchcomplete"]
 	path = bundle/searchcomplete
 	url = https://github.com/vim-scripts/SearchComplete
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/fzf.vim"]
 	path = bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
@@ -43,9 +40,6 @@
 [submodule "bundle/vim-startify"]
 	path = bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/targets"]
 	path = bundle/targets
 	url = https://github.com/wellle/targets.vim.git
