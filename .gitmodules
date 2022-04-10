@@ -67,3 +67,9 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "bundle/riv.vim"]
+	path = bundle/riv.vim
+	url = git@github.com:gu-fan/riv.vim.git
+[submodule "bundle/InstantRst"]
+	path = bundle/InstantRst
+	url = git@github.com:gu-fan/InstantRst.git
