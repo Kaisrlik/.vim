@@ -2,40 +2,44 @@
 ====
 
 This configuration setup allows me work faster with editing ordinary files to
-write codes like in IDE(completition, fast overwiev, grepping, ...).
+write codes like in IDE(competition, fast overview, grepping, ...).
 
-When I started with Vim there was no IDE good for Linux kernel programming. From
-the moment I start using vim where I time to time add such a simple script or
-install pluging to help me develop faster with the IDE.
+When I started with Vim there was *no* IDE good for Linux kernel programming and
+over the time I started to use Vim everywhere.
 
-Thank you guys( Thx Miroslav Bendík and Tomas Baca ) for inspiration of your `vimrc` files.
+Thank you guys (Miroslav Bendík and Tomas Baca) for initial inspiration of
+your *.vimrc* files.
 
 ## How to clone the repository
 
     git clone https://github.com/Kaisrlik/.vim.git
 
-## installion
+## Installation
 
 Just call a `make` :]
 
-WARN: If you will call `make istall` it will relink configuration file to this repo.
+**WARN**: If you will call `make istall` it will relink base configuration file
+like `~/.vim/` to this repo.
 
-Otherwise I recomand to take a look what [Makefile](Makefile) contains.
+In any case I strongly recommend to take a look what [Makefile](Makefile) contains.
 
 ## Plugins
 
+### ale
+
+language client and currently used for syntax check/lint in shell, will be dropped soon
+
+### languageclient-neovim
+
+language client, this plugin fully replaces `ale` or `ycm`
+
+### ccls
+
+is a C/C++/Objective-C language server
+
 ### supertab
 
-is a vim plugin which allows you to use `<Tab>` for all your insert
-completion needs.
-
-### YouCompleteMe
-
-is a fast fuzzy-search code completion engine for Vim. It has several completion
-engines.
-
-* native semantic code completion for "the C-family languages"
-and identifier based engine for other programming languages.
+is a Vim plugin which allows you to use `<Tab>` for all your insert completion needs.
 
 ### nerdtree
 
@@ -43,15 +47,13 @@ is a file system explorer for the Vim editor.
 
 ### vim-airline
 
-Lean & mean status/tabline for vim that's light as air.
+Lean & mean status/tabline for vim
 
 ### powerline
 
 is a statusline plugin for vim, and provides statuslines and prompts for several
 other applications, including zsh, bash, fish, tmux, IPython, Awesome, i3 and
 Qtile.
-
-### powerline/fonts
 
 ### vim-fugitive
 
@@ -67,36 +69,30 @@ is a source code browser plugin for Vim and provides an overview of the
 structure of source code files and allows you to efficiently browse through
 source code files for different programming languages.
 
-### errormarker.vim
-
-Hooks the make quickfix command and converts all compiler errors into signs that
-are placed next to the line with the error. Additionally, lines with errors are
-highlighted. The error markers will be updated on every call to :make.
-
 ### fzf.vim
 
-Wrapper of fzf for basic vim function.
+Wrapper allowing you to use fzf for basic vim function.
 
 ### fzf
 
-fzf is a general-purpose command-line fuzzy finder.
+fzf is a general-purpose command-line fuzzy finder. To be removed since the
+most of distros already having the tool.
+
+### orgmode
+
+Brings `.org` file support to Vim
 
 ### UltiSnips
 
-UltiSnips is the ultimate solution for snippets in Vim.
+UltiSnips is the solution for having snippets in Vim.
 
 ### vim-snippets
 
-Basic sets of snippets for almost all programing language.
+Basic sets of snippets for almost all programming language.
 
 ### vim-startify
 
-Amaizing starting screen.
-
-### tagbar
-
-is a Vim plugin that provides an easy way to browse the tags of the current file
-and get an overview of its structure.
+starting screen.
 
 ### targets
 
@@ -108,8 +104,8 @@ corner cases correctly.  path = bundle/targets
 
 ### vim-sensible
 
-basic setup where everyone can agree on - It will be removed.
+basic setup where everyone can agree on - will be removed.
 
 ### searchcomplete
 
-tab for autocompletition in search - It will be removed
+tab for autocompletition in search - will be removed
