@@ -21,17 +21,20 @@ let g:LanguageClient_serverCommands.objc = g:LanguageClient_serverCommands.c
 " let g:LanguageClient_settingsPath = '~/.vim/settings.json'
 
 " Mapping style
-nnoremap gD :call LanguageClient#textDocument_definition()<CR>
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap gt <Plug>(lcn-type-definition)
+nnoremap gd <Plug>(lcn-definition)
 " Command style
-command! Definition call LanguageClient#textDocument_definition()
 " find global referencies
-nnoremap gr :call LanguageClient#textDocument_references()<CR>
+nnoremap gr <Plug>(lcn-references)
 " go to on local referencies
 nnoremap 2 :call LanguageClient#textDocument_references({'includeDeclaration': v:false})<cr>
 
-nnoremap 1 :call LanguageClient#textDocument_hover()<CR>
-nnoremap 3 :call LanguageClient#textDocument_rename()<CR>
+nnoremap 1 <Plug>(lcn-hover)
+nnoremap 3 <Plug>(lcn-rename)
+nnoremap gi <Plug>(lcn-implementation)
+nnoremap ga <Plug>(lcn-code-action)
+nnoremap gj <Plug>(lcn-diagnostics-next)<cr>
+nnoremap gk <Plug>(lcn-diagnostics-prev)<cr>
 
 nnoremap <C-@> <C-G>u<C-X><C-U>
 

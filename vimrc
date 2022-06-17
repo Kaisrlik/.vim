@@ -50,11 +50,12 @@ nnoremap <leader>1 :TagbarToggle<CR>
 " format while document and return back
 nmap <leader>g :normal mggg=G'g<cr>:delmarks g<cr>zz
 
-" copy visually selected text to systems clipboard
-vnoremap <C-c> "*y
+" copy visually selected text to/out of systems clipboard
+" vnoremap <C-c> "*y
+vnoremap <C-c> :call system("wl-copy --trim-newline", @")<CR>
 
 " call ag on current word
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <C-p> :Ag<CR>
 
 " searching for visually selected text
@@ -218,7 +219,7 @@ set autoindent
 " sometimes extra indention
 set smartindent
 
- " set Visible given invisible characters
+" set Visible given invisible characters
 set list
 set listchars=tab:▶\ 
 set listchars+=trail:◥
