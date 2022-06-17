@@ -36,7 +36,8 @@ nnoremap ga <Plug>(lcn-code-action)
 nnoremap gj <Plug>(lcn-diagnostics-next)<cr>
 nnoremap gk <Plug>(lcn-diagnostics-prev)<cr>
 
-nnoremap <C-@> <C-G>u<C-X><C-U>
+"inoremap <C-@> <C-G>u<C-X><C-U>
+inoremap <C-Space> <C-x><C-o>
 
 " bash linters does not work for this reason I'm keeping ale
 " Only run linters named in ale_linters settings.

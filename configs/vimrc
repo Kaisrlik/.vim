@@ -14,3 +14,7 @@ endfunction
 
 " grep
 set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+" make supertab works with omnifunc
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "context"
