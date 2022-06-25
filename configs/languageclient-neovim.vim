@@ -36,10 +36,29 @@ nnoremap ga <Plug>(lcn-code-action)
 nnoremap gj <Plug>(lcn-diagnostics-next)<cr>
 nnoremap gk <Plug>(lcn-diagnostics-prev)<cr>
 
-"inoremap <C-@> <C-G>u<C-X><C-U>
+" map functions only in supported buffers
+function LC_maps()
+	if has_key(g:LanguageClient_serverCommands, &filetype)
+		nmap <buffer> <silent> K <Plug>(lcn-hover)
+	endif
+endfunction
+autocmd FileType * call LC_maps()
+
+" set completefunc=LanguageClient#complete
+" inoremap <C-Space> <C-G>u<C-X><C-U>
+set omnifunc=LanguageClient#complete
 inoremap <C-Space> <C-x><C-o>
 
 " bash linters does not work for this reason I'm keeping ale
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
 let g:ale_linters = {'sh': ['bashate', 'language_server', 'shell', 'shellcheck']}
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif

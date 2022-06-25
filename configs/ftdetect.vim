@@ -45,3 +45,9 @@ autocmd FileType conf,fstab,cnf,make      let b:comment_leader = '# '
 autocmd FileType matlab,tex               let b:comment_leader = '% '
 autocmd FileType mail                     let b:comment_leader = '> '
 autocmd FileType vim                      let b:comment_leader = '" '
+
+au BufRead /tmp/mutt-* set tw=72
+augroup filetypedetect
+  " Mail
+  autocmd BufRead,BufNewFile *mutt-*              setfiletype mail
+augroup END
