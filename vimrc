@@ -12,7 +12,6 @@ source ~/.vim/configs/basic.vim
 
 source ~/.vim/configs/termdebug.vim
 source ~/.vim/configs/calendar.vim
-source ~/.vim/configs/ftdetect.vim
 source ~/.vim/configs/fzf.vim
 source ~/.vim/configs/indexing.vim
 source ~/.vim/configs/languageclient-neovim.vim
