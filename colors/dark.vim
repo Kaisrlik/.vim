@@ -9,23 +9,22 @@ endif
 
 let colors_name = "dark"
 
-hi Normal	guifg=White guibg=grey20
+hi Normal ctermbg=237 guifg=#e0e0e0 guibg=#353538
 
 hi SpecialKey term=bold ctermfg=239 guifg=Blue
 hi NonText term=bold cterm=bold ctermfg=4 gui=bold guifg=Blue
 hi Directory term=bold ctermfg=4 guifg=Blue
 hi ErrorMsg term=standout cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
-hi IncSearch term=reverse cterm=reverse gui=reverse
-hi Search term=reverse ctermbg=3 guibg=Gold2
+hi Search ctermbg=3 guibg=Yellow
 hi MoreMsg term=bold ctermfg=2 gui=bold guifg=SeaGreen
 hi ModeMsg term=bold cterm=bold gui=bold
-hi LineNr term=underline ctermfg=240 guifg=Red3
+hi LineNr term=underline ctermfg=240 guifg=#484b60
 hi Question term=standout ctermfg=2 gui=bold guifg=SeaGreen
 hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Black
 hi StatusLineNC term=reverse cterm=reverse gui=bold guifg=PeachPuff guibg=Gray45
 hi VertSplit term=reverse cterm=reverse gui=bold guifg=White guibg=Gray45
 hi Title term=bold ctermfg=3
-hi Visual term=reverse cterm=reverse gui=reverse guifg=Grey80 guibg=fg
+hi Visual term=reverse cterm=reverse gui=reverse
 hi VisualNOS term=bold,underline cterm=bold,underline gui=bold,underline
 hi WarningMsg term=standout ctermfg=1 gui=bold guifg=Red
 hi WildMenu term=standout ctermfg=0 ctermbg=3 guifg=Black guibg=Yellow
@@ -36,23 +35,24 @@ hi DiffChange term=bold ctermbg=5 guibg=#edb5cd
 hi DiffDelete term=bold cterm=bold ctermfg=4 ctermbg=6 gui=bold guifg=LightBlue guibg=#f6e8d0
 hi DiffText term=reverse cterm=bold ctermbg=1 gui=bold guibg=#ff8060
 
-hi CursorLine ctermbg=236 guibg=#75756e cterm=none
-hi CursorLineNr ctermbg=236 cterm=bold guibg=#75756e
+hi CursorLine ctermbg=236 guibg=#25252e cterm=none
+hi CursorLineNr ctermbg=236 cterm=bold gui=bold guibg=#25252e
 
 " Colors for syntax highlighting
-" hi Comment term=bold ctermfg=4 guifg=#406090
-hi Comment ctermfg=247 guifg=#808080
-" hi Constant term=underline ctermfg=1 guifg=#c00058
-hi Constant ctermfg=brown guifg=#ffa0a0
-hi Special term=bold ctermfg=5 guifg=SlateBlue
-hi Identifier term=underline ctermfg=6 guifg=DarkCyan
-hi Statement term=bold ctermfg=3 gui=bold guifg=Brown
-hi PreProc term=underline ctermfg=5 guifg=Magenta3
-hi Type term=underline ctermfg=2 gui=bold guifg=SeaGreen
+hi Comment ctermfg=247 gui=italic guifg=#585b70
+hi Constant ctermfg=216 guifg=#fab387
+hi Special term=bold ctermfg=5 guifg=Magenta
+hi Identifier cterm=none ctermfg=29 guifg=DarkCyan
+hi Statement ctermfg=3 gui=none guifg=#cbcb41
+hi PreProc ctermfg=212 guifg=#f5c2e7
+hi StorageClass ctermfg=180 guifg=#f9e2af
+hi Type ctermfg=2 gui=none guifg=#10d040
 hi Ignore cterm=bold ctermfg=7 guifg=bg
 hi Error cterm=bold ctermfg=7 ctermbg=1
 hi SpellBad ctermfg=7 ctermbg=1
-hi Todo cterm=bold ctermfg=3 ctermbg=0
+hi Todo cterm=bold ctermfg=3 ctermbg=0 gui=bold guifg=Yellow guibg=Black
+hi Function ctermfg=111 guifg=#89b4fa
+hi Whitespace ctermfg=239 guifg=#454548
 
 " git
 hi diffRemoved ctermfg=9
@@ -62,16 +62,9 @@ hi diffSubname cterm=bold ctermfg=3
 
 " syn case ignore
 
-" Taby a mezery TODO doenst work
-highlight Tab1 ctermbg=lightgreen guibg=#e0ffe0
-highlight Tab2 ctermbg=lightred   guibg=#ffe0e0
-highlight Tab3 ctermbg=lightblue  guibg=#e0e0ff
-highlight Tab4 ctermbg=lightcyan  guibg=#ffffe0
+" highlight Tab1 ctermbg=lightgreen guibg=#e0ffe0
+" syn match Tab1 '\t'
 
-syn match Tab1 '\t'
-syn match Tab2 "\t\t"
-syn match Tab3 "\t\t\t"
-syn match Tab4 "\t\t\t\t"
 " Show trailing whitepace and spaces before a tab:
 syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 " po nasapni <01>44= oznacuje

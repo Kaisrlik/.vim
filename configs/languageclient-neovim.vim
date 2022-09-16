@@ -53,12 +53,3 @@ inoremap <C-Space> <C-x><C-o>
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
 let g:ale_linters = {'sh': ['bashate', 'language_server', 'shell', 'shellcheck']}
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
