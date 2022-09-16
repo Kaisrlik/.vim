@@ -64,3 +64,6 @@
 [submodule "bundle/InstantRst"]
 	path = bundle/InstantRst
 	url = git@github.com:gu-fan/InstantRst.git
+[submodule "bundle/presenting.vim"]
+	path = bundle/presenting.vim
+	url = https://github.com/sotte/presenting.vim
