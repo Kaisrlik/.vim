@@ -1,7 +1,7 @@
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-let g:LanguageClient_autoStart=1
+let g:LanguageClient_autoStart=0
 let g:LanguageClient_loggingLevel = 'ERROR'
 " let g:LanguageClient_virtualTextPrefix = ''
 let g:LanguageClient_loggingFile = '/tmp/languageclient.log'

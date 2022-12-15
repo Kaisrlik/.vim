@@ -18,5 +18,6 @@ source ~/.vim/configs/languageclient-neovim.vim
 source ~/.vim/configs/ultisnip.vim
 source ~/.vim/configs/vim-airline.vim
 source ~/.vim/configs/vimrc
+source ~/.vim/configs/riv.vim
 
 let g:UltiSnipsListSnippets = "<C-U>"

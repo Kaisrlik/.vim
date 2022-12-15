@@ -45,8 +45,10 @@ nmap <leader>g :normal mggg=G'g<cr>:delmarks g<cr>zz
 vnoremap <C-c> :call system("wl-copy --trim-newline", @")<CR>
 
 " call ag on current word
-nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
-nnoremap <silent> <C-p> :Ag<CR>
+if !has("nvim-0.5.0")
+	nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
+	nnoremap <silent> <C-p> :Ag<CR>
+end
 
 " searching for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -100,3 +102,5 @@ vmap > >gv
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+nmap <leader>1 :.!toilet -w 200 -f term -F border<CR>

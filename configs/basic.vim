@@ -134,6 +134,8 @@ set cursorline
 set complete=.,w,b,u,t,i
 set complete+=kspell
 " set complete+=k~/vocabulary.txt
+set dictionary+=$HOME/.vim/spell/en.utf-8.add
+set spellfile=$HOME/.vim/spell/en.utf-8.add
 
 " set compleopts
 set completeopt=menuone,longest,noinsert,noselect
