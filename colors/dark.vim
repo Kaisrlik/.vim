@@ -35,6 +35,10 @@ hi DiffChange term=bold ctermbg=5 guibg=#edb5cd
 hi DiffDelete term=bold cterm=bold ctermfg=4 ctermbg=6 gui=bold guifg=LightBlue guibg=#f6e8d0
 hi DiffText term=reverse cterm=bold ctermbg=1 gui=bold guibg=#ff8060
 
+" Pmenu
+hi Pmenu term=bold ctermfg=246 ctermbg=236
+hi PmenuSel term=bold ctermfg=250 ctermbg=0
+
 hi CursorLine ctermbg=236 guibg=#25252e cterm=none
 hi CursorLineNr ctermbg=236 cterm=bold gui=bold guibg=#25252e
 
