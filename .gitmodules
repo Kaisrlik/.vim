@@ -49,21 +49,9 @@
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
-[submodule "bundle/ccls"]
-	path = bundle/ccls
-	url = https://github.com/MaskRay/ccls
-[submodule "bundle/languageclient-neovim"]
-	path = bundle/languageclient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim.git
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/dense-analysis/ale.git
 [submodule "bundle/riv.vim"]
 	path = bundle/riv.vim
 	url = git@github.com:gu-fan/riv.vim.git
-[submodule "bundle/InstantRst"]
-	path = bundle/InstantRst
-	url = git@github.com:gu-fan/InstantRst.git
 [submodule "bundle/presenting.vim"]
 	path = bundle/presenting.vim
 	url = https://github.com/sotte/presenting.vim
