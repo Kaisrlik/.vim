@@ -1,5 +1,7 @@
 # example of ccls file, please edit and copy it to .ccls
-clang
--std=c++17
--stdlib=libc++
--isystem/usr/local/include
+g++
+%c -std=c11
+%cpp -std=c++2a
+-Isrc/include
+# CMAKE compile commadns are generated via - cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+# meson build # generates compile_commands.json in the `build` directory
