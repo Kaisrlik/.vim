@@ -8,6 +8,7 @@ if exists("syntax_on")
 endif
 
 let colors_name = "dark"
+set notermguicolors
 
 hi Normal ctermbg=237 guifg=#e0e0e0 guibg=#353538
 
@@ -24,6 +25,8 @@ hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Bl
 hi StatusLineNC term=reverse cterm=reverse gui=bold guifg=PeachPuff guibg=Gray45
 hi VertSplit term=reverse cterm=reverse gui=bold guifg=White guibg=Gray45
 hi Title term=bold ctermfg=3
+hi String ctermfg=216 guifg=#fab387
+" hi Operator
 hi Visual term=reverse cterm=reverse gui=reverse
 hi VisualNOS term=bold,underline cterm=bold,underline gui=bold,underline
 hi WarningMsg term=standout ctermfg=1 gui=bold guifg=Red
@@ -41,9 +44,11 @@ hi CursorLineNr ctermbg=236 cterm=bold gui=bold guibg=#25252e
 " Colors for syntax highlighting
 hi Comment ctermfg=247 gui=italic guifg=#585b70
 hi Constant ctermfg=216 guifg=#fab387
-hi Special term=bold ctermfg=5 guifg=Magenta
+hi Special term=bold ctermfg=2 guifg=SeaGreen
 hi Identifier cterm=none ctermfg=29 guifg=DarkCyan
 hi Statement ctermfg=3 gui=none guifg=#cbcb41
+hi Keyword ctermfg=3 gui=none guifg=#cbcb41
+
 hi PreProc ctermfg=212 guifg=#f5c2e7
 hi StorageClass ctermfg=180 guifg=#f9e2af
 hi Type ctermfg=2 gui=none guifg=#10d040
