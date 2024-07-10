@@ -27,7 +27,7 @@ hi VertSplit term=reverse cterm=reverse gui=bold guifg=White guibg=Gray45
 hi Title term=bold ctermfg=3
 hi String ctermfg=216 guifg=#fab387
 " hi Operator
-hi Visual term=reverse cterm=reverse gui=reverse
+hi Visual term=reverse cterm=reverse ctermfg=239 ctermbg=248
 hi VisualNOS term=bold,underline cterm=bold,underline gui=bold,underline
 hi WarningMsg term=standout ctermfg=1 gui=bold guifg=Red
 hi WildMenu term=standout ctermfg=0 ctermbg=3 guifg=Black guibg=Yellow
@@ -44,10 +44,11 @@ hi CursorLineNr ctermbg=236 cterm=bold gui=bold guibg=#25252e
 " Colors for syntax highlighting
 hi Comment ctermfg=247 gui=italic guifg=#585b70
 hi Constant ctermfg=216 guifg=#fab387
-hi Special term=bold ctermfg=2 guifg=SeaGreen
+hi Special term=bold ctermfg=2
 hi Identifier cterm=none ctermfg=29 guifg=DarkCyan
 hi Statement ctermfg=3 gui=none guifg=#cbcb41
 hi Keyword ctermfg=3 gui=none guifg=#cbcb41
+hi MatchParen cterm=underline ctermbg=14 ctermfg=0
 
 hi PreProc ctermfg=212 guifg=#f5c2e7
 hi StorageClass ctermfg=180 guifg=#f9e2af
@@ -60,7 +61,7 @@ hi Function ctermfg=111 guifg=#89b4fa
 hi Whitespace ctermfg=239 guifg=#454548
 
 " git
-hi diffRemoved ctermfg=9
+hi diffRemoved ctermfg=9 guifg=#cbcb41
 hi diffAdded ctermfg=10
 hi diffFile ctermfg=6
 hi diffSubname cterm=bold ctermfg=3

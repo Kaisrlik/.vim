@@ -1,8 +1,10 @@
 ACC
 ACL
+AFU
 ATT
 Agilex
 Attr
+Bcc
 CSR
 CTRL
 CXL
@@ -25,6 +27,7 @@ MEV
 NVMe
 QSFP
 RCRB
+RPC
 Serial-Over-Lan
 Simics
 Stratix
@@ -45,7 +48,9 @@ dtb
 dts
 filesystem
 fitImage
+firewall
 gdb
+hypervisor
 hw
 iAFU
 initd
@@ -56,7 +61,10 @@ readonly
 rootfs
 rtl
 sw
+syscall
 systemd
 tftp
 tftpboot
+toolchain
+userspace
 vmlinuz
